@@ -1,3 +1,5 @@
+package Smallest_Positive_Integer;
+
 import java.util.Scanner;
 
 public class SPI {
