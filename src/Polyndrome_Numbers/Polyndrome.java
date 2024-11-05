@@ -6,11 +6,13 @@ public class Polyndrome {
 
     public static boolean polyndrome(int n){
 
+        if (n < 0) return false;
         int reverse = 0, original = n;
 
-        while (n!=0){
+
+        while (n != 0){
             reverse = reverse * 10 + n%10;
-            n= n/10;
+            n= n / 10;
         }
 
         return (reverse == original);
