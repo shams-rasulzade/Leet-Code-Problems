@@ -28,6 +28,5 @@ public class ArrayFromPermutation {
         }
 
         System.out.println(Arrays.toString(buildArray(arr)));
-        ;
     }
 }
