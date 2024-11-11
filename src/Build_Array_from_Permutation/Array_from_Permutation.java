@@ -17,7 +17,7 @@ public class Array_from_Permutation {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter the lenght of the Array: ");
+        System.out.println("Enter the length of the Array: ");
         int size = scanner.nextInt();
         int[] arr = new int[size];
 
