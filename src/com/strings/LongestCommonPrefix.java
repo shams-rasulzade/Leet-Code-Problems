@@ -1,5 +1,11 @@
 package com.strings;
 
+/**
+* 0ms 100%
+*<a href="https://leetcode.com/problems/longest-common-prefix/description/"> Longest Common Prefix
+*
+**/
+
 public class LongestCommonPrefix {
     public static String longestCommonPrefix(String[] strs) {
         if (strs == null || strs.length == 0) {
