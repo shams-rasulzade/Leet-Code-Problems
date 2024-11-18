@@ -8,14 +8,9 @@ public class LongestCommonPrefix {
 
         String smallest = strs[0]; //to get a reference for comparing
 
-        System.out.println(smallest);
         for (String str : strs) {
             while (!str.startsWith(smallest)) {
                 smallest = smallest.substring(0, smallest.length() - 1);
-                System.out.println(smallest + " while");
-                if (smallest.isEmpty()) { // to not to get error when the substring becomes empty
-                    return "";
-                }
             }
         }
 
@@ -23,7 +18,7 @@ public class LongestCommonPrefix {
     }
 
     public static void main(String[] args) {
-        String[] array = {"flow", "flowe", "fit"};
+        String[] array = {"flow", "lflowe", "mfit"};
         System.out.println(longestCommonPrefix(array));
     }
 }
