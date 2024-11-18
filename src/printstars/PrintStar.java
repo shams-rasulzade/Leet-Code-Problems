@@ -1,4 +1,4 @@
-package com.printstars;
+package printstars;
 
 public class PrintStar {
     public static void main(String[] args) {
