@@ -4,9 +4,7 @@ import java.util.Scanner;
 
 public class GuessNumber {
     public static long generateRandomDigits(int n) { // creates random number
-        long min = (long) Math.pow(10, n - 1); // minimum number for n digits
-        long max = (long) Math.pow(10, n) - 1; // maximum number for n digits
-        return new Random().nextLong(max - min + 1) + min; // Random number between min and max
+        return (long) Math.pow(10, n - 1) + new Random().nextLong((long) Math.pow(10, n) - (long) Math.pow(10, n - 1));
     }
 
 
