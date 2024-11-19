@@ -45,7 +45,6 @@ public class GuessNumber {
         int length = scanner.nextInt();
 
         long randomNumber = generateRandomDigits(length);
-        System.out.println(randomNumber);
 
         System.out.print("Random number is generated. Enter value to guess: ");
         long userNumber = scanner.nextLong();
