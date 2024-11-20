@@ -1,4 +1,5 @@
 package NumberGuess;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -8,23 +9,21 @@ public class GuessNumber {
     }
 
 
-    public static void finddigits(long randomNumber, long userNumber, int length){
-        int x=0,y=0; // counts for digits
+    public static void finddigits(long randomNumber, long userNumber, int length) {
+        int x = 0, y = 0; // counts for digits
         StringBuilder random = new StringBuilder();
         StringBuilder usernum = new StringBuilder();
         random.append(randomNumber);
         usernum.append(userNumber);
 
-        for (int i = 0; i < length; i++){
-            if(usernum.charAt(i) == random.charAt(i)){
+        for (int i = 0; i < length; i++) {
+            if (usernum.charAt(i) == random.charAt(i)) {
                 x++;
                 random.setCharAt(i, ' ');
                 continue;
-            }
-
-            else {
-                for (int j = 0; j < length; j++){
-                    if(usernum.charAt(i) == random.charAt(j)){
+            } else {
+                for (int j = 0; j < length; j++) {
+                    if (usernum.charAt(i) == random.charAt(j)) {
                         y++;
                         random.setCharAt(j, ' ');
                         break;
@@ -36,7 +35,7 @@ public class GuessNumber {
         System.out.println(x + " green, " + y + " yellow");
     }
 
-    public static void main (String[] args){
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter length of the value: ");
