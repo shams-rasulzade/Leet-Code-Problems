@@ -1,4 +1,4 @@
-package com.strings;
+package Strings.LongestCommonPrefix;
 
 /**
 * 0ms 100%
