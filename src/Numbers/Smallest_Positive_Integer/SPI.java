@@ -1,4 +1,4 @@
-package Smallest_Positive_Integer;
+package Numbers.Smallest_Positive_Integer;
 
 import java.util.Scanner;
 

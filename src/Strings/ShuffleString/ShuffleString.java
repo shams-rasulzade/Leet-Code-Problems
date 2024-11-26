@@ -1,4 +1,4 @@
-package com.strings;
+package Strings.ShuffleString;
 
 public class ShuffleString {
     public static String restoreString(String s, int[] indices) {
