@@ -7,26 +7,20 @@ public class RansomNote {
     public static boolean canConstruct(String ransomNote, String magazine) {
         if (ransomNote.length() > magazine.length()) return false;
 
-        StringBuilder note = new StringBuilder();
-        note.append(ransomNote);
-        StringBuilder mag = new StringBuilder();
-        mag.append(magazine);
+        int[] charCount = new int[26];
 
-        for (int i = 0; i < ransomNote.length(); i++) {
-            if (note.charAt(i) == mag.charAt(i)) {
-                note.setCharAt(i, ' ');
-                mag.setCharAt(i, ' ');
-                continue;
-            } else {
-                for (int j = 0; j < mag.length(); j++) {
-                    if (note.charAt(i) == mag.charAt(j)) {
-                        note.setCharAt(i, ' ');
-                        mag.setCharAt(j, ' ');
-                    }
-                }
-            }
+        for (char c : magazine.toCharArray()) {
+            charCount[c - 'a']++;
         }
-        return note.toString().toString().trim().isEmpty();
+
+        for (char c : ransomNote.toCharArray()) {
+            if (charCount[c - 'a'] == 0) {
+                return false;
+            }
+            charCount[c - 'a']--;
+        }
+
+        return true;
     }
 
 
@@ -41,6 +35,5 @@ public class RansomNote {
 
         if (canConstruct(ransomNote, magazine)) System.out.println("Note can be constructed from magazine!");
         else System.out.println("Note can't be constructed from magazine!");
-
     }
 }
