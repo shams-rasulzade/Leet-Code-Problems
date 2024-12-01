@@ -1,4 +1,4 @@
-package Numbers.Fibonacci_Numbers;
+package LeetCode.Numbers.Fibonacci_Numbers;
 
 import java.util.Scanner;
 

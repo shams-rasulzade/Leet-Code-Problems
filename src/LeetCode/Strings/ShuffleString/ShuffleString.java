@@ -1,4 +1,4 @@
-package Strings.ShuffleString;
+package LeetCode.Strings.ShuffleString;
 
 public class ShuffleString {
     public static String restoreString(String s, int[] indices) {

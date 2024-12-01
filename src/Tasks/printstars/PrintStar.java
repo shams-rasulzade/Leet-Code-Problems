@@ -1,4 +1,4 @@
-package printstars;
+package Tasks.printstars;
 
 public class PrintStar {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Numbers.Smallest_Positive_Integer;
+package LeetCode.Numbers.Smallest_Positive_Integer;
 
 import java.util.Scanner;
 

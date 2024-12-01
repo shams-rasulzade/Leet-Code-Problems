@@ -1,4 +1,4 @@
-package Strings.RansomNote;
+package LeetCode.Strings.RansomNote;
 
 import java.util.Scanner;
 

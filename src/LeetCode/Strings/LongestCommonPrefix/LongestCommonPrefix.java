@@ -1,4 +1,4 @@
-package Strings.LongestCommonPrefix;
+package LeetCode.Strings.LongestCommonPrefix;
 
 /**
 * 0ms 100%

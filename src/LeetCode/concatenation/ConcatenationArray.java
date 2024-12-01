@@ -1,4 +1,4 @@
-package concatenation;
+package LeetCode.concatenation;
 
 import java.util.Arrays;
 

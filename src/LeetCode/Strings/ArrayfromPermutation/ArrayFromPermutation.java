@@ -1,4 +1,4 @@
-package Build_Array_from_Permutation;
+package LeetCode.Strings.ArrayfromPermutation;
 
 import java.util.Arrays;
 import java.util.Scanner;

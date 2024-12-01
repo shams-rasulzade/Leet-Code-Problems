@@ -1,4 +1,4 @@
-package Numbers.NumberGuess;
+package Tasks.NumberGuess;
 
 import java.util.Random;
 import java.util.Scanner;
