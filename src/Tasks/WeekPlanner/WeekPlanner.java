@@ -28,7 +28,7 @@ public class WeekPlanner {
                 schedule[i][1] = sc.nextLine();
                 System.out.println("Schedule is changed!");
                 dayFound = true;
-                break;  // Exit the loop once the day is found and updated
+                break;
             }
         }
         if (!dayFound) {
