@@ -52,26 +52,28 @@ public class WeekPlanner {
         String[][] schedule = createschedule();
 
         while (true) {
-            System.out.println("Enter a day of the week, 'Reschedule [day]', or 'Exit':");
+            System.out.println("Enter a day of the week, 'Reschedule [day]/ Change [day]', or 'Exit':");
             String input = sc.nextLine().trim().toUpperCase();
+            String day = input.split(" ")[0];
 
-            switch (input) {
+
+            switch (day) {
+                case "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY" -> {
+                    int dayIndex = getDayIndex(day.split(" ")[0]);
+                    if (dayIndex != -1) {
+                        System.out.println("Your tasks for " + schedule[dayIndex][0] + ": " + schedule[dayIndex][1]);
+                    } else {
+                        System.out.println("Invalid day of the week.");
+                    }
+                }
                 case "EXIT" -> {
                     return;
                 }
-                default -> {
-                    if (input.startsWith("RESCHEDULE")) {
-                        String day = input.split(" ")[1];
-                        reschedule(schedule, day);
-                    } else {
-                        int dayIndex = getDayIndex(input);
-                        if (dayIndex != -1) {
-                            System.out.println("Your tasks for " + schedule[dayIndex][0] + ": " + schedule[dayIndex][1]);
-                        } else {
-                            System.out.println("Invalid day. Please try again.");
-                        }
-                    }
+                case "RESCHEDULE", "CHANGE" -> {
+                    reschedule(schedule, input.split(" ")[1]);
                 }
+                default -> System.out.println("Invalid day. Please try again.");
+
             }
         }
     }
