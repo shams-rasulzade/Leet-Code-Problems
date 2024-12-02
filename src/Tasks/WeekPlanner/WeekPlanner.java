@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class WeekPlanner {
 
-    public static String[][] createscedule() {
+    public static String[][] createschedule() {
         Scanner sc = new Scanner(System.in);
 
         String[][] schedule = {{"Monday", ""}, {"Tuesday", ""}, {"Wednesday", ""}, {"Thursday", ""}, {"Friday", ""}, {"Saturday", ""}, {"Sunday", ""}};
@@ -18,51 +18,60 @@ public class WeekPlanner {
         return schedule;
     }
 
-    public static String[][] reschedule(String[][] schedule) {
+    public static String[][] reschedule(String[][] schedule, String day) {
         Scanner sc = new Scanner(System.in);
+        boolean dayFound = false;
 
-        while (true) {
-            System.out.print("Enter the day of the week to change: ");
-            String day = sc.nextLine().trim();
-
-            for (int i = 0; i < schedule.length; i++) {
-                if (schedule[i][0].equalsIgnoreCase(day)) {
-                    System.out.print("Enter the task: ");
-                    schedule[i][1] = sc.nextLine();
-                    System.out.println("Schedule is changed!");
-                    return schedule;
-                }
+        for (int i = 0; i < schedule.length; i++) {
+            if (schedule[i][0].equalsIgnoreCase(day)) {
+                System.out.print("Enter the task: ");
+                schedule[i][1] = sc.nextLine();
+                System.out.println("Schedule is changed!");
+                dayFound = true;
+                break;  // Exit the loop once the day is found and updated
             }
+        }
+        if (!dayFound) {
             System.out.println("Input is incorrect, please, try again!");
         }
+        return schedule;
     }
 
+    public static int getDayIndex(String day) {
+        String[] days = {"MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"};
+        for (int i = 0; i < days.length; i++) {
+            if (days[i].equals(day)) return i;
+        }
+        return -1;
+    }
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Hello, please create your schedule first!");
-        String[][] schedule = createscedule();
-
+        String[][] schedule = createschedule();
 
         while (true) {
-            System.out.println("Please, enter: \n 1. Day of the week to see schedule \n 2. 'Reschedule' to change task list \n 3. 'Exit' to exit from the program ");
-            String day = sc.nextLine().trim();
-            if (day.equalsIgnoreCase("EXIT")) break;
-            else if (day.equalsIgnoreCase("RESCHEDULE")) {
-                reschedule(schedule);
-                continue;
-            }
+            System.out.println("Enter a day of the week, 'Reschedule [day]', or 'Exit':");
+            String input = sc.nextLine().trim().toUpperCase();
 
-            switch (day.toUpperCase()) {
-                case "MONDAY" -> System.out.println("Your tasks for Monday: " + schedule[0][1]);
-                case "TUESDAY" -> System.out.println("Your tasks for Tuesday: " + schedule[1][1]);
-                case "WEDNESDAY" -> System.out.println("Your tasks for Wednesday: " + schedule[2][1]);
-                case "THURSDAY" -> System.out.println("Your tasks for Thursday: " + schedule[3][1]);
-                case "FRIDAY" -> System.out.println("Your tasks for Friday: " + schedule[4][1]);
-                case "SATURDAY" -> System.out.println("Your tasks for Saturday: " + schedule[5][1]);
-                case "SUNDAY" -> System.out.println("Your tasks for Sunday: " + schedule[6][1]);
-                default -> System.out.println("Sorry, I don't understand you, please try again");
+            switch (input) {
+                case "EXIT" -> {
+                    return;
+                }
+                default -> {
+                    if (input.startsWith("RESCHEDULE")) {
+                        String day = input.split(" ")[1];
+                        reschedule(schedule, day);
+                    } else {
+                        int dayIndex = getDayIndex(input);
+                        if (dayIndex != -1) {
+                            System.out.println("Your tasks for " + schedule[dayIndex][0] + ": " + schedule[dayIndex][1]);
+                        } else {
+                            System.out.println("Invalid day. Please try again.");
+                        }
+                    }
+                }
             }
         }
     }
