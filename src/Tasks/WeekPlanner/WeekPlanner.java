@@ -7,15 +7,7 @@ public class WeekPlanner {
     public static String[][] createscedule() {
         Scanner sc = new Scanner(System.in);
 
-        String[][] schedule = {
-                {"Monday", ""},
-                {"Tuesday", ""},
-                {"Wednesday", ""},
-                {"Thursday", ""},
-                {"Friday", ""},
-                {"Saturday", ""},
-                {"Sunday", ""}
-        };
+        String[][] schedule = {{"Monday", ""}, {"Tuesday", ""}, {"Wednesday", ""}, {"Thursday", ""}, {"Friday", ""}, {"Saturday", ""}, {"Sunday", ""}};
 
         for (int i = 0; i < schedule.length; i++) {
             System.out.print("Enter the task for " + schedule[i][0] + ": ");
@@ -29,22 +21,20 @@ public class WeekPlanner {
     public static String[][] reschedule(String[][] schedule) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter the day of the week to change: ");
-        String day = sc.nextLine().trim();
+        while (true) {
+            System.out.print("Enter the day of the week to change: ");
+            String day = sc.nextLine().trim();
 
-        for (int i = 0; i < schedule.length; i++) {
-            if (schedule[i][0].equalsIgnoreCase(day)) {
-                System.out.print("Enter the task: ");
-                schedule[i][1] = sc.nextLine();
-                System.out.println("Schedule is changed!");
-                break;
-            } else {
-                System.out.println("Input is incorrect, please, try again!");
-                break;
+            for (int i = 0; i < schedule.length; i++) {
+                if (schedule[i][0].equalsIgnoreCase(day)) {
+                    System.out.print("Enter the task: ");
+                    schedule[i][1] = sc.nextLine();
+                    System.out.println("Schedule is changed!");
+                    return schedule;
+                }
             }
+            System.out.println("Input is incorrect, please, try again!");
         }
-
-        return schedule;
     }
 
 
