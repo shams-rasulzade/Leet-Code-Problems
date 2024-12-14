@@ -4,7 +4,7 @@ public class MovieApp {
     private String name;
     private double rating;
 
-    public MovieApp(String name, double rating){
+    public MovieApp(String name, double rating) {
         this.name = name;
         this.rating = rating;
     }
@@ -22,7 +22,7 @@ public class MovieApp {
     }
 
     public void setRating(double rating) {
-       this.rating = rating;
+        this.rating = rating;
     }
 
     @Override
