@@ -27,7 +27,6 @@ public class exception {
 
     public static float computeSequence(String text) {
         float sum = 0;
-        System.out.println(text);
 
         try {
             if (text.length() < 2) {
